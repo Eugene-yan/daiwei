@@ -1,17 +1,17 @@
 <?php
 namespace app\index\controller;
 
-class Index
+use think\Controller;
+
+class Index extends Controller
 {
     public function index()
     {
         return 'Hello,World!';
     }
-}
-class HelloWorld
-{
-    public function index($name = 'World')
+    public function hello($name = 'thinkphp')
     {
-        return 'Hello2,' . $name .'!';
+        $this->assign('name',$name);
+        return $this->fetch();
     }
 }
